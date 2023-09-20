@@ -55,6 +55,7 @@
             },
             "legend": {"orient": "none", "legendX": 700, "legendY": 15, "symbolSize": 500, "labelFontSize": 11, "titleFontSize": 16}
           },
+          "opacity": {"value": 0.8},
           "tooltip": [
             {"field": "State"},
             {"field": "Year"},
