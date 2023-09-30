@@ -6,11 +6,11 @@
     {"filter": "datum.Year == Year"},
     {"filter": "Level_selection == null || datum.Level == Level_selection"}
   ],
+  "width": 700,
+  "height": 400,
   "layer": [
     {
       "mark": "bar",
-      "width": 700,
-      "height": 400,
       "encoding": {
         "x": {
           "field": "State_Short",
