@@ -1,3 +1,12 @@
+h1 {
+    font-weight: 900;
+	text-align: center;
+}
+
+.vis-container {
+    width: 100%;
+}
+
 #symbol_map {
 	top:100px;
 	bottom: 100px; 
@@ -8,10 +17,21 @@
 }
 
 #bar {
-	top:100px;
+	top:50px;
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
 }
+
+body {
+	align-items: center;
+}
+
+.page {
+    width: 1000px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
