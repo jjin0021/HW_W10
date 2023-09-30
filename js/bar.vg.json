@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text":"Australian Public Universities Students", "fontSize": 28, "subtitle": "by Level and Citizenship", "subtitleFontSize": 20},
+  "title": {"text":"Number of Students per State", "fontSize": 28, "subtitle": "by Level and Citizenship", "subtitleFontSize": 20},
   "data": {"url": "https://raw.githubusercontent.com/jjin0021/datavis2/main/data/aus_pub_uni.csv"},
   "transform": [
     {"filter": "datum.Year == Year"},
