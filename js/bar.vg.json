@@ -1,7 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text":"Number of Students per State", "fontSize": 28, "subtitle": "by Level and Citizenship", "subtitleFontSize": 20},
-  "data": {"url": "https://raw.githubusercontent.com/jjin0021/datavis2/main/data/aus_pub_uni.csv"},
+  "title": {
+    "text": "Number of Students per State",
+    "fontSize": 28,
+    "subtitle": "by Level and Citizenship",
+    "subtitleFontSize": 20
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/jjin0021/datavis2/main/data/aus_pub_uni.csv"
+  },
   "transform": [
     {"filter": "datum.Year == Year"},
     {"filter": "Level_selection == null || datum.Level == Level_selection"}
@@ -15,17 +22,13 @@
         "x": {
           "field": "State_Short",
           "sort": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
-          "axis": {
-            "labelAngle": 0,
-            "title": "State",
-            "titleFontSize": 16
-          }
+          "axis": {"labelAngle": 0, "title": "State", "titleFontSize": 16}
         },
         "y": {
-          "aggregate": "sum", 
-          "field": "Count", 
+          "aggregate": "sum",
+          "field": "Count",
           "type": "quantitative",
-          "scale": {"domain": [0,325000]},
+          "scale": {"domain": [0, 325000]},
           "axis": {
             "format": "s",
             "title": "Number of Students",
@@ -36,27 +39,29 @@
         "color": {
           "field": "Citizenship",
           "scale": {
-            "domain": [
-              "Domestic",
-              "International"
-            ],
-            "range": [
-              "#4138af",
-              "#ffe330"
-            ]
+            "domain": ["Domestic", "International"],
+            "range": ["#4138af", "#ffe330"]
           }
         },
-        "opacity": {"field": "Level"},
+        "opacity": {
+          "field": "Level",
+          "scale": {
+            "domain": ["Postgraduate", "Undergraudate"],
+            "range": [0.4, 1]
+          }  
+        },
         "tooltip": [
           {"field": "State"},
           {"field": "Year"},
-      {"field": "Citizenship"},
+          {"field": "Citizenship"},
           {"field": "Level"},
-          {"aggregate": "sum", 
-            "field": "Count", 
+          {
+            "aggregate": "sum",
+            "field": "Count",
             "type": "quantitative",
             "title": "Number of Students",
-            "format": ","}
+            "format": ","
+          }
         ]
       }
     },
@@ -73,13 +78,18 @@
           "sort": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"]
         },
         "y": {
-          "aggregate": "sum", 
-          "field": "Count", 
+          "aggregate": "sum",
+          "field": "Count",
           "type": "quantitative",
-          "scale": {"domain": [0,325000]}
+          "scale": {"domain": [0, 325000]}
         },
         "xOffset": {"field": "Citizenship", "sort": "-y"},
-        "text": {"aggregate": "sum", "field": "Count", "type": "quantitative", "format": ".3s"}
+        "text": {
+          "aggregate": "sum",
+          "field": "Count",
+          "type": "quantitative",
+          "format": ".3s"
+        }
       }
     }
   ],
@@ -88,29 +98,21 @@
       "name": "Year",
       "value": 2021,
       "bind": {
-          "input": "range",
-          "min": 2017,
-          "max": 2021,
-          "step": 1,
-          "name": "Select Year:"
+        "input": "range",
+        "min": 2017,
+        "max": 2021,
+        "step": 1,
+        "name": "Select Year:"
       }
     },
     {
-        "name": "Level_selection",
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            "Postgraduate",
-            "Undergraduate"
-          ],
-          "labels": [
-            "Show All",
-            "Postgraduate",
-            "Undergraduate"
-          ],
-          "name": "Select Level: "
-        }
+      "name": "Level_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Postgraduate", "Undergraduate"],
+        "labels": ["Show All", "Postgraduate", "Undergraduate"],
+        "name": "Select Level: "
+      }
     }
   ]
 }
