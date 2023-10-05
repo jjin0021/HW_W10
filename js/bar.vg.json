@@ -41,14 +41,16 @@
           "scale": {
             "domain": ["Domestic", "International"],
             "range": ["#4138af", "#ffe330"]
-          }
+          },
+          "legend": {"symbolSize": 100, "labelFontSize": 11, "titleFontSize": 16}
         },
         "opacity": {
           "field": "Level",
           "scale": {
             "domain": ["Postgraduate", "Undergraudate"],
             "range": [0.4, 1]
-          }  
+          },
+          "legend": {"symbolSize": 100, "labelFontSize": 11, "titleFontSize": 16}
         },
         "tooltip": [
           {"field": "State"},
